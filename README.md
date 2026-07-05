@@ -21,60 +21,60 @@
 ### 1. Windows 用户使用指南 (`.bat` 脚本)
 
 #### ⚙️ 第一步：基础配置
-1. 前往本仓库的 **Releases** 页面，下载最新的 `Cisco.sortcut.for.Windows.bat` 脚本文件。
-2. 右键点击下载好的 `Cisco.sortcut.for.Windows.bat`，选择 **编辑**（或用记事本打开）。
+1. 前往本仓库的 **Releases** 页面，下载最新的 `Cisco.shortcut.for.Windows.bat` 脚本文件。
+2. 右键点击下载好的 `Cisco.shortcut.for.Windows.bat`，选择 **编辑**（或用记事本打开）。
 3. 在脚本中段找到相应位置，将占位符替换为你自己的真实校园网凭据：
    * 将 [Your NetID] 修改为你自己的 NetID。
    * 将 [Your Password] 密码占位符修改为你自己的 NYU 密码。
 4. 点击记事本左上角 **文件 ➔ 另存为**，确保窗口最下方的 **编码 (Encoding)** 务必选择为 **`UTF-8`**，然后保存覆盖。
 
 #### 🎯 第二步：日常运行
-* **管理员身份运行**：右键以管理员身份运行修改后的 `Cisco.sortcut.for.Windows.bat`。
+* **管理员身份运行**：右键以管理员身份运行修改后的 `Cisco.shortcut.for.Windows.bat`。
   * **若处于未连接状态**：脚本会强行清理后台冲突进程并秒发验证请求。当看到黑色窗口提示 `Please approve DUO PUSH on your phone...` 时，**留意手机 Duo 弹窗并点击批准**。连接成功后，窗口会在 2 秒内静默自动关闭。
   * **若处于已连接状态**：再次双击，脚本会利落地切断校园网 VPN 连接，随后窗口自动蒸发。
 
 ---
 
-### 2. macOS & Linux 用户使用指南 (`.sh` 脚本)
+### 2. MacOS & Linux 用户使用指南 (`.sh` 脚本)
 
 #### ⚙️ 第一步：下载与权限解锁
-1. 前往本仓库的 **Releases** 页面，下载最新的 `Cisco.sortcut.for.MacOS.sh` 或 `Cisco.sortcut.for.Linux.sh` 脚本文件。
+1. 前往本仓库的 **Releases** 页面，下载最新的 `Cisco.shortcut.for.MacOS.sh` 或 `Cisco.shortcut.for.Linux.sh` 脚本文件。
 2. 打开 **终端 (Terminal)**，使用 `cd` 命令切换到你下载该文件的目录下（例如：`cd ~/Downloads`）。
 3. 执行以下命令，为脚本赋予系统级可执行权限：
 
    ```bash
-   chmod +x Cisco.sortcut.for.MacOS.sh
+   chmod +x Cisco.shortcut.for.MacOS.sh
    ```
 
    或
 
    ```bash
-   chmod +x Cisco.sortcut.for.Linux.sh
+   chmod +x Cisco.shortcut.for.Linux.sh
    ```
 
 #### 📝 第二步：凭据配置
-1. 使用本地文本编辑器（如 `nano`、`vim` 或 VS Code）打开 `Cisco.sortcut.for.MacOS.sh` 或 `Cisco.sortcut.for.Linux.sh` 。
+1. 使用本地文本编辑器（如 `nano`、`vim` 或 VS Code）打开 `Cisco.shortcut.for.MacOS.sh` 或 `Cisco.shortcut.for.Linux.sh` 。
 2. 在代码中段的 Here-Doc (`<<EOF`) 区域，将 [Your_NetID] 与 [Your_Password] 替换为你自己的真实 NetID 和密码。
 3. 保存并关闭文件。
 
 #### 🚀 第三步：终极偷懒技巧（命令行宏挂载）
-为了让你连 `./Cisco.sortcut.for.MacOS.sh` 或 `./Cisco.sortcut.for.Linux.sh` 都不用输入，强烈建议将其挂载为系统全局别名（Alias）：
+为了让你连 `./Cisco.shortcut.for.MacOS.sh` 或 `./Cisco.shortcut.for.Linux.sh` 都不用输入，强烈建议将其挂载为系统全局别名（Alias）：
 1. 在终端中根据你的 Shell 类型打开配置文件：
    * **Mac 用户**（默认 Zsh）：执行 `nano ~/.zshrc`
    * **Linux 用户**（默认 Bash）：执行 `nano ~/.bashrc`
 2. 滚动到文件最底部，添加一行（假设你将脚本放在了家目录下）：
 
    ```bash
-   alias vpn="~/ `./Cisco.sortcut.for.MacOS.sh`"
+   alias vpn="~/Cisco.shortcut.for.MacOS.sh`"
    ```
    
    或
    
    ```bash
-   alias vpn="~/ `./Cisco.sortcut.for.Linux.sh`"
+   alias vpn="~/Cisco.shortcut.for.Linux.sh`"
    ```
    
-4. 保存退出后，在终端执行 `source ~/.zshrc`（或 `source ~/.bashrc`）使其立刻生效。
+3. 保存退出后，在终端执行 `source ~/.zshrc`（或 `source ~/.bashrc`）使其立刻生效。
 
 **💡 日常使用体验**：此后你随时随地打开终端，**只需敲击 `vpn` 三个字母并回车**，即可全自动触发校园网连接或断开，并在 1秒 后自动干净地退出当前终端会话。
 
