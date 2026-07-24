@@ -62,19 +62,7 @@
 1. 在终端中根据你的 Shell 类型打开配置文件：
    * **Mac 用户**（默认 Zsh）：执行 `nano ~/.zshrc`
    * **Linux 用户**（默认 Bash）：执行 `nano ~/.bashrc`
-2. 滚动到文件最底部，添加一行（假设你将脚本放在了家目录下）：
-
-   ```bash
-   alias vpn="~/Cisco.shortcut.for.MacOS.sh`"
-   ```
-   
-   或
-   
-   ```bash
-   alias vpn="~/Cisco.shortcut.for.Linux.sh`"
-   ```
-   
-3. 保存退出后，在终端执行 `source ~/.zshrc`（或 `source ~/.bashrc`）使其立刻生效。
+2. 保存退出后，在终端执行 `source ~/.zshrc`（或 `source ~/.bashrc`）使其立刻生效。
 
 **💡 日常使用体验**：此后你随时随地打开终端，**只需敲击 `vpn` 三个字母并回车**，即可全自动触发校园网连接或断开，并在 1秒 后自动干净地退出当前终端会话。
 
